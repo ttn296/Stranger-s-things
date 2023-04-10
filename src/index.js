@@ -6,14 +6,14 @@ import { AllPosts, PostDetails, Login, Register, NewPost, Update } from "./compo
 const Nav = (props) => {
   const posts = props.posts;
   const user = props.user;
-  
+
   return (
     <nav>
       <Link to="/posts">Posts ({posts.length}) </Link>
       <Link to="/newPost">Add New Post</Link>
       <Link to="/login">{user.username ? "Log Out" : "Log In"}</Link>
       <Link to="/register">Register</Link>
-    </nav>  
+    </nav>
   );
 };
 
@@ -69,9 +69,9 @@ const App = () => {
   return (
     <div>
       <h1 className="container">Stranger's Things</h1>
-      {user.username ? <h3 className="username">Welcome: {user.username} </h3> : null }
-      <Nav posts={posts} user={user}/>
-    
+      {user.username ? <h3 className="username">Welcome: {user.username} </h3> : null}
+      <Nav posts={posts} user={user} />
+
       <Routes>
         <Route path="/" element={<Navigate to="/posts" />} />
         <Route path="/posts/:id" element={<PostDetails posts={posts} setPostId={setPostId} />} />
@@ -79,12 +79,12 @@ const App = () => {
         <Route
           path="/login"
           element={<Login exchangeTokenForUser={exchangeTokenForUser}
-          user={user} setUser={setUser} />}
+            user={user} setUser={setUser} />}
         />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/newpost" element={<NewPost posts={posts} setPosts={setPosts} token={token} />} />  
+        <Route path="/register" element={<Register />} />
+        <Route path="/newpost" element={<NewPost posts={posts} setPosts={setPosts} token={token} />} />
         <Route path="/update" element={<Update posts={posts} setPosts={setPosts} postId={postId} setPostId={setPostId} />} />
-        </Routes>
+      </Routes>
     </div>
   );
 };
@@ -93,4 +93,5 @@ root.render(
   <HashRouter>
     <App />
   </HashRouter>
+  //testing commits
 );
