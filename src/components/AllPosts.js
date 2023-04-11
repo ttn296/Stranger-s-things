@@ -6,10 +6,10 @@ const AllPosts = (props) => {
   //console.log(posts);
 
   return (
-    <div>
+    <div className="allPosts-container">
       {posts.map((post) => {
         return (
-          <div key={post._id} className= {post.isAuthor ? "singlePost myPost" : "singlePost"}>
+          <div key={post._id} className={post.isAuthor ? "singlePost myPost" : "singlePost"}>
             <Link to={`/posts/${post._id}`}>{post.title}</Link>
             <p className="description">description: {post.description}</p>
             <p className="price">price: {post.price}</p>

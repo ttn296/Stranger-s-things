@@ -67,9 +67,11 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <h1 className="container">Stranger's Things</h1>
-      {user.username ? <h3 className="username">Welcome: {user.username} </h3> : null}
+    <div className="hero">
+      <div className="hero-container">
+        <h1 className="title">Stranger's Things</h1>
+        {user.username ? <h3 className="username">Welcome: {user.username} </h3> : null}
+      </div>
       <Nav posts={posts} user={user} />
 
       <Routes>
@@ -93,5 +95,4 @@ root.render(
   <HashRouter>
     <App />
   </HashRouter>
-  //testing commits
 );

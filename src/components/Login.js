@@ -36,7 +36,7 @@ const Login = (props) => {
         exchangeTokenForUser();
         fetch(
           `https://strangers-things.herokuapp.com/api/${cohortName}/users/me`,
-          { 
+          {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ const Login = (props) => {
     <div className="login">
       {user._id ? (
         <div className="logout-btn">
-          Welcome {user.username} <button onClick={logout}>Log Out</button>
+          Welcome {user.username} <button onClick={logout}>Loging out?</button>
         </div>
       ) : null}
       {!user._id ? (
