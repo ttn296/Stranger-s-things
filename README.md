@@ -1,4 +1,4 @@
-# strangers-things-2209-FTB-ET-WEB-AM
+# strangers-things
 
 - npm i
 - npm run build
